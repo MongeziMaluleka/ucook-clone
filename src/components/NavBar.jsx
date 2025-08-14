@@ -54,7 +54,7 @@ export default function NavBar() {
               <div className="Navigation_Item" href="#" target="_self">
                 <span className="User_Icon">
                   👤
-                  </span>  
+                </span>  
               </div>
             </div>
         </div>

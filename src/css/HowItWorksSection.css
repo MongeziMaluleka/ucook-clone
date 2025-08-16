@@ -1,0 +1,143 @@
+
+/* --- How it works section --- */
+
+/* Section container: stacks heading and tiles vertically, centers content */
+.PageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 0;
+    background: #f9fafb;
+    min-height: 340px;
+    gap: 0; /* Remove unwanted gap between heading and tiles */
+}
+
+/* Heading for How it works */
+.heading3 {
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d2d2d;
+    letter-spacing: -1px;
+}
+
+/* Wrapper for tiles: lays out tiles in a row, centers them */
+.PageTilesWrapper {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+/* Each tile */
+.PageTile {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 32px 36px;
+    max-width: 370px;
+    width: 100%;
+    min-width: 260px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+/* Tile content */
+.PageTileCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Tile icon container */
+.PageTileIconCont {
+    width: 72px;
+    height: 72px;
+    background: #f0f4f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Responsive image inside tile */
+.ResponsiveImage {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tile heading */
+.heading4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 12px 0 8px 0;
+    text-align: center;
+}
+
+/* Tile paragraph */
+.Paragraph {
+    font-size: 1rem;
+    color: #444;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-width: 320px;
+}
+
+/* Responsive: stack tiles on small screens */
+@media (max-width: 900px) {
+    .PageTilesWrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .PageTile {
+        max-width: 90vw;
+        min-width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading3 {
+        font-size: 1.3rem;
+        margin-bottom: 24px;
+    }
+    .PageTile {
+        max-width: 98vw;
+        min-width: unset;
+        padding: 18px 8px;
+    }
+}
+/* Style for the FAQ paragraph and link */
+.Paragraph.FAQ {
+    margin-top: 32px;
+    font-size: 1.1rem;
+    color: #222;
+    text-align: center;
+    font-weight: 500;
+}
+
+.ParagraphLink {
+    color: orange;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-left: 6px;
+    transition: color 0.2s;
+}
+
+.ParagraphLink:hover {
+    color: #ff6600;
+    text-decoration: none;
+}

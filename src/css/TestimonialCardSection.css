@@ -1,0 +1,57 @@
+/* TestimonialCardSection.css */
+
+.testimonial-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  background: #f8f8f8;
+}
+
+.page-text-card {
+  margin: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #f5c26633;
+  padding: 2rem;
+  max-width: 350px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1em;
+}
+
+.star-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.star-icon {
+  font-size: 1.3rem;
+  margin-right: 0.15em;
+  color: #FCD266;
+}
+
+.testimonial-content {
+  font-style: italic;
+  font-size: 1.06em;
+}
+
+@media (max-width: 600px) {
+  .testimonial-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .page-text-card {
+    width: 95vw;
+    max-width: 99vw;
+    min-width: 0;
+  }
+}

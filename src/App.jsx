@@ -5,6 +5,8 @@ import HowItWorksSection from "./components/HowItWorksSection";
 import OnTheMenuSection from "./components/OnTheMenuSection";
 import WhyUcookSection from "./components/WhyUcookSection";
 import PageCardCarousel from "./components/PageCardCarousel";
+import TestimonialCardSection from "./components/TestimonialCardSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <OnTheMenuSection />
       <WhyUcookSection/>
       <PageCardCarousel />  
+      <TestimonialCardSection/>
+      <Footer/>
     </div>
   );
 }

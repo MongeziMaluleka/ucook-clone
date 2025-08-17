@@ -1,4 +1,6 @@
 {
   "name": "ucook-clone",
-  "srcDir": "src"
+  "srcDir": "dist",
+  "platformVersion": "2025.1"
+
 }

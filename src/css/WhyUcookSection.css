@@ -1,0 +1,23 @@
+#WhyUCOOK.PageSection {
+  background: #f9fafb;
+  padding: 56px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#WhyUCOOK .heading3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+#WhyUCOOK .PageTilesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* ...you can reuse PageTile, PageTileCont, .ResponsiveImage, .heading4, .Paragraph styles from HowItWorksSection.css */

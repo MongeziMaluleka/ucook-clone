@@ -1,11 +1,9 @@
-/* Header and Navigation Bar */
 header {
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-
 .NavBar_Container {
     display: flex;
     justify-content: space-between;
@@ -14,64 +12,130 @@ header {
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
 .NavBar_LogoContainer {
     display: flex;
     align-items: center;
 }
-
 .NavBar_LogoImage {
     height: 35px;
 }
-
 .NavBar_ItemsContainer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-grow: 1;
 }
-
 .NavBar_LeftItemsContainer {
     display: flex;
     align-items: center;
     margin-right: auto;
 }
-
 .NavBar_ItemContainer {
     margin: 0 12px;
+    position: relative; /* Enables absolute children dropdown */
 }
-
 .Navigation_Item {
+    white-space: nowrap;
+    text-transform: uppercase;
     text-decoration: none;
-    color: #555;
+    line-height: 2;
+    font-family: gordita;
+    align-items: center;
+    display: initial;
+    color: rgb(30, 30, 30);
     font-weight: 500;
     font-size: 15px;
-    transition: color 0.2s ease-in-out;
+    padding: 0 8px;
+
+}
+.Navigation_Item:hover,
+.NavBar_ItemContainer:hover > .Navigation_Item {
+    color: #989b98;
+}
+/* --- DROPDOWN STYLES --- */
+.NavBar_SubItemsContainer {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    padding: 18px 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    animation: dropdownIn 0.18s cubic-bezier(.42,0,.58,1.0);
+}
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-10px);}
+  to { opacity: 1; transform: translateX(-50%) translateY(0);}
+}
+.Navigation_SubItem {
+    padding: 11px 26px;
+    color: #222;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background 0.16s, color 0.16s;
     white-space: nowrap;
+    text-align: left;
+    width: 100%;
+    display: block;
 }
-
-.Navigation_Item:hover {
-    color: #008000;
+.Navigation_SubItem:hover,
+.Navigation_SubItem:focus {
+    background: #f9fafb;
+    color: #ec6f34;
 }
-
+/* Right side nav */
 .NavBar_RightItemsContainer {
     display: flex;
     align-items: center;
     margin-left: 20px;
 }
-
-/* Sign Up Button */
+.NavBar_RightItemsContainer .NavBar_ItemContainer {
+    margin: 0 8px;
+}
+.NavBar_RightItemsContainer .Navigation_Item {
+    padding: 8px 12px;
+}
 .NavBar_RightItemsContainer .NavBar_ItemContainer:last-child .Navigation_Item {
     background-color: #ff8c00;
     color: #fff;
-    padding: 8px 18px;
     border-radius: 5px;
-    text-decoration: none;
     font-weight: bold;
     font-size: 15px;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s;
 }
-
 .NavBar_RightItemsContainer .NavBar_ItemContainer:last-child .Navigation_Item:hover {
     background-color: #e67e00;
+}
+
+/* Cart/User Icon Optionally */
+.NavBar_CartIcon, .User_Icon {
+    font-size: 18px;
+    margin-left: 4px;
+}
+
+/* Responsive - stack items, dropdowns as popovers for mobile */
+@media (max-width: 900px) {
+    .NavBar_LeftItemsContainer {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .NavBar_ItemContainer,
+    .NavBar_RightItemsContainer .NavBar_ItemContainer {
+        margin: 0 6px;
+    }
+    .NavBar_SubItemsContainer {
+        left: 0;
+        right: auto;
+        min-width: 175px;
+        transform: none;
+    }
 }

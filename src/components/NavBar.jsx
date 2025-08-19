@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/NavBar.css";
 
+const navItems = [
 
+  {
+    label: "Meal Kits",
+    children: [
+      { label: "Meal Kit Menu", href: "#" },
+      { label: "Plans & Pricing", href: "#" },
+      { label: "Our Suppliers", href: "#" }
+    ]
+  },
+  {
+    label: "Frozen",
+    children: [
+      { label: "Craft Meals", href: "#" },
+      { label: "Craft Dessert", href: "#" },
+      { label: "Frozen FAQ", href: "#" }
+    ]
+  },
+  { label: "Wine" },
+  { label: "Market" },
+  { label: "Weekend Boxes" },
+  { label: "About UCook" },
+  { label: "Partner With Us" },
+  { label: "Gifts" },
+  { label: "Deals" },
+];
 export default function NavBar() {
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <header>
       <nav className="NavBar_Container">
@@ -10,26 +37,29 @@ export default function NavBar() {
         <div className="NavBar_LogoContainer">
           <img className="NavBar_LogoImage" src="/path/to/logo.png" alt="Logo" />
         </div>
+        {/* left nav items here */}
         <div className="NavBar_ItemsContainer">
           <div className="NavBar_LeftItemsContainer">
-            {[
-
-              "Meal Kits",
-              "Frozen",
-              "Wine",
-              "Market",
-              "Weekend Boxes",
-              "About UCook",
-              "Partner With Us",
-              "Gifts",
-              "Deals"
-              
-            ].map(item =>(
-              <div className="NavBar_ItemContainer" key={item}>
-                <a className="Navigation_Item" href="#" target="_self">
-                  {item}
+            {navItems.map((item, i) => (
+              <div
+                className="NavBar_ItemContainer"
+                key={item.label}
+                onMouseEnter={() => item.children ? setOpenIndex(i) : setOpenIndex(null)}
+                onMouseLeave={() => setOpenIndex(null)}
+              >
+                <a className="Navigation_Item" href={item.href || '#'} target="_self">
+                  {item.label}
                 </a>
-              </div>  
+                {item.children && openIndex === i && (
+                  <div className="NavBar_SubItemsContainer">
+                    {item.children.map((subItem) => (
+                      <a className="Navigation_SubItem" href={subItem.href} target="_self" key={subItem.label}>
+                        {subItem.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
           <div className="NavBar_RightItemsContainer">

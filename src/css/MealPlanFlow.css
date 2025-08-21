@@ -1,0 +1,242 @@
+.MealPlanFlow {
+  background: #fafaf9;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  padding-bottom: 40px;
+}
+
+/* Progress Steps */
+.MealPlanFlow__steps {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: #ff8352;
+  border-radius: 8px;
+  margin: 28px auto 36px auto;
+  max-width: 900px;
+  overflow: hidden;
+  box-shadow: 0 1.5px 7px rgba(80,52,20,0.07);
+}
+.MealPlanFlow__step {
+  flex: 1;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 1;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+}
+.MealPlanFlow__step span {
+  margin-top: 6px;
+  font-size: 0.98rem;
+  white-space: normal;
+  font-weight: 500;
+}
+.MealPlanFlow__step:not(:last-child):after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 24%;
+  height: 52%;
+  width: 2px;
+  background: #fff3;
+  border-radius: 1.5px;
+}
+.MealPlanFlow__circle {
+  background: #fff;
+  color: #ff8352;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 1px;
+}
+.MealPlanFlow__step--active .MealPlanFlow__circle {
+  border: 2.7px solid #fff;
+  background: #ff8352;
+  color: #fff;
+}
+.MealPlanFlow__step--done .MealPlanFlow__circle {
+  background: #74b462;
+  color: #fff;
+}
+
+/* Card blocks */
+.MealPlanFlow__cardGroup {
+  background: #fff;
+  margin: 0 auto 28px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(80,52,20,0.07);
+  max-width: 900px;
+  padding-bottom: 18px;
+}
+.MealPlanFlow__cardHeader {
+  background: #ff8352;
+  color: #fff;
+  padding: 22px 0 14px 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.MealPlanFlow__cardHeader--small {
+  padding: 15px 0 11px 0;
+  font-size: 1.25rem;
+}
+.MealPlanFlow__cardBody {
+  padding: 32px 20px 19px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.MealPlanFlow__cardBody--threeup {
+  flex-direction: row;
+  gap: 38px;
+  justify-content: center;
+  text-align: center;
+}
+.MealPlanFlow__cardIcon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.MealPlanFlow__cardTitle {
+  font-weight: 700;
+  margin-bottom: 7px;
+  color: #272522;
+}
+.MealPlanFlow__cardDesc {
+  color: #595350;
+  font-size: 1.01rem;
+}
+.MealPlanFlow__cardHint {
+  padding: 8px 12px 6px 12px;
+  text-align: center;
+  color: #f6650f;
+  font-size: 1.04rem;
+  font-weight: 500;
+}
+
+/* Choices/Buttons */
+.MealPlanFlow__question {
+  font-size: 1.1rem;
+  color: #272522;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.MealPlanFlow__choices {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 19px;
+}
+.MealPlanFlow__choices button {
+  background: #fff;
+  border: 2px solid #e6e5e3;
+  border-radius: 7px;
+  color: #272522;
+  padding: 12px 22px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.16s;
+}
+.MealPlanFlow__choices button.selected, .MealPlanFlow__choices button:hover {
+  border: 2.5px solid #ff8352;
+  background: #fff6f1;
+  color: #ff8352;
+}
+
+/* Plan grid */
+.MealPlanFlow__planGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 24px;
+  margin: 34px 0 0 0;
+}
+.MealPlanFlow__planBox {
+  background: #fff;
+  border: 2.5px solid #e6e5e3;
+  border-radius: 8px;
+  padding: 19px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: 0 1.5px 7px rgba(80,52,20,0.06);
+  font-size: 1.04rem;
+  font-weight: 500;
+  transition: box-shadow 0.14s, border 0.14s;
+  margin-bottom: 3px;
+  position: relative;
+}
+.MealPlanFlow__planBox input[type="radio"] {
+  display: none;
+}
+.MealPlanFlow__planLabel {
+  font-weight: 700;
+  color: #272522;
+  margin-bottom: 7px;
+}
+.MealPlanFlow__planDesc {
+  color: #595350;
+  font-weight: 400;
+}
+.plan--selected, .MealPlanFlow__planBox:hover {
+  border: 2.5px solid #ff8352;
+  background: #fff8f3;
+  box-shadow: 0 2px 9px rgba(255,131,82,0.09);
+}
+.plan--selected .MealPlanFlow__planLabel {
+  color: #ff8352;
+}
+.plan--selected .MealPlanFlow__planDesc {
+  color: #bf592e;
+}
+
+/* Controls */
+.MealPlanFlow__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  padding: 0 22px 22px 22px;
+}
+.MealPlanFlow__submit, .MealPlanFlow__back {
+  min-width: 120px;
+  background: #232926;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.09rem;
+  font-weight: 700;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: background 0.14s;
+  margin-left: 6px;
+}
+.MealPlanFlow__submit:disabled {
+  background: #d1d1d1;
+  color: #f6f3f2;
+  cursor: not-allowed;
+}
+.MealPlanFlow__submit:hover, .MealPlanFlow__back:hover {
+  background: #ff8352;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .MealPlanFlow__steps { font-size: 0.95rem; }
+  .MealPlanFlow__cardGroup { padding-bottom: 5px; }
+  .MealPlanFlow__cardBody,
+  .MealPlanFlow__cardBody--threeup { flex-direction: column; gap: 24px; }
+  .MealPlanFlow__planGrid { grid-template-columns: 1fr; gap: 11px; }
+  .MealPlanFlow__controls { flex-direction: column; gap: 10px; padding: 0 12px 12px 12px;}
+}

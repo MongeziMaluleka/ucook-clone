@@ -1,0 +1,112 @@
+.MealKitIntro {
+  width: 100%;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.MealKitIntro__hero {
+  text-align: center;
+  padding: 52px 16px 38px 16px;
+  background: #fafbfa;
+}
+
+.MealKitIntro__tagline {
+  color: #767b6e;
+  font-size: 1.07rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.MealKitIntro__title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+.MealKitIntro__subtitle {
+  color: #363b2c;
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.MealKitIntro__columnsBg {
+  background: #f6f6ef;
+  padding: 0 0 50px 0;
+}
+
+.MealKitIntro__columns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 46px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 0 24px;
+}
+
+.MealKitIntro__imageWrap {
+  min-width: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.MealKitIntro__image {
+  display: block;
+  width: 310px;
+  max-width: 98vw;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 4.5px 24px rgba(60,60,60,0.09);
+}
+
+.MealKitIntro__textBlock {
+  max-width: 530px;
+  text-align: left;
+}
+
+.MealKitIntro__blockLabel {
+  font-size: 1.08rem;
+  color: #7c8571;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.MealKitIntro__blockTitle {
+  font-size: 1.6rem;
+  color: #232926;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.MealKitIntro__blockText {
+  font-size: 1.04rem;
+  color: #37352f;
+  line-height: 1.62;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 950px) {
+  .MealKitIntro__columns {
+    flex-direction: column;
+    gap: 30px;
+    padding: 38px 10px 0 10px;
+  }
+  .MealKitIntro__imageWrap {
+    min-width: unset;
+  }
+  .MealKitIntro__image {
+    width: 90vw;
+    max-width: 330px;
+  }
+  .MealKitIntro__textBlock {
+    text-align: center;
+    max-width: 99vw;
+  }
+}

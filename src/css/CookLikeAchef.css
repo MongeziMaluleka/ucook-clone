@@ -1,0 +1,73 @@
+.CookLikeAchef {
+  background: #f6f6ef;
+  padding: 56px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.CookLikeAchef__content {
+  display: flex;
+  align-items: center;
+  max-width: 980px;
+  width: 100%;
+  gap: 38px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.CookLikeAchef__text {
+  flex: 1 1 0;
+  text-align: left;
+  min-width: 270px;
+}
+
+.CookLikeAchef__lead {
+  color: #979d92;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.CookLikeAchef__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #232926;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+
+.CookLikeAchef__desc {
+  color: #39392a;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.CookLikeAchef__imgWrap {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.CookLikeAchef__img {
+  width: 300px;
+  max-width: 94vw;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 5px 28px rgba(60,60,60,0.11);
+}
+
+@media (max-width: 900px) {
+  .CookLikeAchef__content {
+    flex-direction: column;
+    gap: 22px;
+    padding: 0 10px;
+  }
+  .CookLikeAchef__img {
+    width: 96vw;
+    max-width: 350px;
+  }
+  .CookLikeAchef__text {
+    text-align: center;
+  }
+}

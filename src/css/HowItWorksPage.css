@@ -1,0 +1,116 @@
+.PageCardSection__Container {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 52px 0 40px 0;
+  background: #fff;
+  border-radius: 14px;
+  text-align: center;
+}
+.PageCardSection__Heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 32px 0;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+}
+.PageCardSection__CarouselContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.Carousel__Slides {
+  min-width: 320px;
+  max-width: 440px;
+  width: 100%;
+}
+
+.Carousel__Slide {
+  margin: 0 auto;
+}
+
+.PageCard__Container {
+  background: #f9fafb;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px 24px 22px 24px;
+  min-width: 280px;
+  max-width: 380px;
+  text-align: center;
+}
+
+.PageCard__TitleContainer h5, .PageCard__Title  {
+  font-size: 1.26rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+}
+
+.PageCard__Rule {
+  border-bottom: 1.5px solid #ececec;
+  margin: 8px 0 14px 0;
+}
+
+.PageCard__Description {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 1rem;
+}
+.Carousel__Arrow {
+  background: #eaeaea;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+  outline: none;
+}
+.Carousel__Arrow:disabled {
+  opacity: 0.52;
+  pointer-events: none;
+}
+.Carousel__Arrow:not(:disabled):hover {
+  background: #ff8c00;
+  color: #fff;
+}
+.Carousel__Dots {
+  margin-top: 18px;
+  text-align: center;
+}
+.Carousel__Dot {
+  background: #ececec;
+  border: none;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.Carousel__Dot.active,
+.Carousel__Dot:hover {
+  background: #ff8c00;
+}
+@media (max-width: 600px) {
+  .PageCardSection__Container {
+    padding: 28px 4vw 18px 4vw;
+  }
+  .PageCard__Container {
+    min-width: 80vw;
+    max-width: 98vw;
+    padding: 12vw 4vw;
+  }
+}
